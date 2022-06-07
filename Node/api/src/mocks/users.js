@@ -1,10 +1,10 @@
 exports.users = [
   {
     id: 1,
-    name: "Lucas",
+    name: 'Lucas',
   },
   {
     id: 2,
-    name: "Isabella",
+    name: 'Isabella',
   },
 ];
