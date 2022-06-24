@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+
 import Header from './Header';
 import Post from './Post';
+import { ThemeProvider } from './ThemeContext';
 
 export default function App() {
   const [posts, setPosts] = useState([
@@ -52,7 +54,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <ThemeProvider>
       <Header>
         <h2>Posts da semana</h2>
         <button onClick={handleRefresh}>Atualizar</button>
@@ -62,6 +64,6 @@ export default function App() {
       {posts.map((post) => (
         <Post key={post.id} post={post} onRemove={handleRemovePost} />
       ))}
-    </>
+    </ThemeProvider>
   );
 }
