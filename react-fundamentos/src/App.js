@@ -4,6 +4,8 @@ import Header from './Header';
 import Post from './Post';
 import { ThemeProvider } from './ThemeContext';
 
+import styles from './App.scss';
+
 export default function App() {
   const [posts, setPosts] = useState([
     {
@@ -12,6 +14,7 @@ export default function App() {
       subtitle: 'Subtítulo da notícia 01',
       likes: 40,
       read: false,
+      removed: false,
     },
     {
       id: Math.random(),
@@ -19,6 +22,7 @@ export default function App() {
       subtitle: 'Subtítulo da notícia 02',
       likes: 10,
       read: true,
+      removed: false,
     },
     {
       id: Math.random(),
@@ -26,6 +30,7 @@ export default function App() {
       subtitle: 'Subtítulo da notícia 03',
       likes: 30,
       read: false,
+      removed: false,
     },
     {
       id: Math.random(),
@@ -33,6 +38,7 @@ export default function App() {
       subtitle: 'Subtítulo da notícia 04',
       likes: 20,
       read: true,
+      removed: false,
     },
   ]);
 
@@ -50,13 +56,15 @@ export default function App() {
   }
 
   function handleRemovePost(postId) {
-    setPosts((prevState) => prevState.filter((post) => post.id !== postId));
+    setPosts((prevState) =>
+      prevState.map((post) => (post.id === postId ? { ...post, removed: true } : post))
+    );
   }
 
   return (
     <ThemeProvider>
       <Header>
-        <h2>Posts da semana</h2>
+        <h2 className={styles.title}>Posts da semana</h2>
         <button onClick={handleRefresh}>Atualizar</button>
       </Header>
       <hr />
