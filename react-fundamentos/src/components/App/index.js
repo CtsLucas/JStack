@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Header from './Header';
-import Post from './Post';
-import { ThemeProvider } from './ThemeContext';
+import Header from '../Header';
+import Post from '../Post';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 import styles from './App.scss';
 
@@ -51,6 +51,7 @@ export default function App() {
         subtitle: `Subtítulo da notícia 0${prevState.length + 1}`,
         likes: Math.floor(Math.random() * 100),
         read: false,
+        removed: false,
       },
     ]);
   }
