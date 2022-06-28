@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Container } from './styles';
 
-export default function Footer({onToggleTheme, selectedTheme}) {
+import { ThemeContext } from '../../App';
+
+export default function Footer() {
+  const context = useContext(ThemeContext);
+
   return (
     <Container>
       <span>JStack's Blog. Todos os direitos reservados.</span>
-      <button 
-        type="button" 
-        onClick={onToggleTheme}>
-          {selectedTheme === 'dark' ? '🌞' : '🌚' }
+      <button
+        type="button"
+        onClick={context.onToggleTheme}>
+        {context.theme === 'dark' ? '🌞' : '🌚'}
       </button>
     </Container>
   );
