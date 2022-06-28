@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { Container } from './styles';
 
-import { ThemeContext } from '../../App';
+import { ThemeContext } from '../ContextProvider';
 
 export default function Footer() {
   const context = useContext(ThemeContext);
