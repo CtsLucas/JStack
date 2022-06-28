@@ -2,15 +2,15 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Header({ onToggleTheme, selectedTheme }) {
+export default function Footer({onToggleTheme, selectedTheme}) {
   return (
     <Container>
-      <h1>JStack's Blog</h1>
+      <span>JStack's Blog. Todos os direitos reservados.</span>
       <button 
         type="button" 
         onClick={onToggleTheme}>
           {selectedTheme === 'dark' ? '🌞' : '🌚' }
-        </button>
+      </button>
     </Container>
   );
 }
