@@ -12,7 +12,10 @@ export default function Footer() {
       <span>JStack's Blog. Todos os direitos reservados.</span>
       <button
         type="button"
-        onClick={context.onToggleTheme}>
+        onClick={context.onToggleTheme}
+        value={context.theme}
+        onChange={e => context.setName(e.target.value)}
+      >
         {context.theme === 'dark' ? '🌞' : '🌚'}
       </button>
     </Container>

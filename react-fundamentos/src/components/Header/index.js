@@ -12,7 +12,10 @@ export default function Header() {
       <h1>JStack's Blog</h1>
       <button
         type="button"
-        onClick={context.onToggleTheme}>
+        onClick={context.onToggleTheme}
+        value={context.theme}
+        onChange={e => context.setName(e.target.value)}
+      >
         {context.theme === 'dark' ? '🌞' : '🌚'}
       </button>
     </Container>
