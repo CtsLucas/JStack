@@ -1,34 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 import Header from '../Header';
-import PostsList from '../PostsList';
 import Footer from '../Footer';
-import { useTheme } from 'styled-components';
+import Routes from '../../routes';
+import { Nav } from './styles';
 
 export default function Layout() {
-  const theme = useTheme();
 
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <PostsList />
-      <div // Exemplo de utilização do useTheme();
-        style={{
-          backgroundColor: theme.postBackgroundColor,
-          display: 'flex',
-          flexDirection: 'column',
-          padding: theme.spacing.medium,
-          borderRadius: theme.borderRadius,
-          marginTop: theme.spacing.small,
-        }}>
-        <h2 style={{
-          margin: 0,
-        }}>useTheme</h2>
-        <small>
-          Qui exercitation voluptate aute qui nisi.
-        </small>
-      </div>
+      <Nav>
+        <Link to="/">Home</Link>
+        <Link to="/posts">Posts</Link>
+      </Nav>
+      <Routes />
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
