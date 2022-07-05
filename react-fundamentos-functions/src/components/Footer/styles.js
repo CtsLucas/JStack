@@ -8,7 +8,7 @@ export const Container = styled.footer`
   padding: 0 ${({ theme }) => theme.spacing.large}px;
   border-radius: ${({ theme }) => theme.borderRadius};
   justify-content: space-between;
-  margin-top: ${({ theme }) => theme.spacing.large}px;
+  margin-top: 47vh;
 
   button {
     cursor: pointer;

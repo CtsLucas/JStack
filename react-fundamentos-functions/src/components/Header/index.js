@@ -1,11 +1,17 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import { ThemeContext } from '../ContextProvider';
 
 import { Container } from './styles';
 
-import { ThemeContext } from '../ContextProvider';
-
 export default function Header() {
   const context = useContext(ThemeContext);
+
+  const history = useHistory();
+
+  function handleNavigate() {
+    history.push('/posts');
+  }
 
   return (
     <Container>
@@ -17,6 +23,9 @@ export default function Header() {
         onChange={e => context.setName(e.target.value)}
       >
         {context.theme === 'dark' ? '🌞' : '🌚'}
+      </button>
+      <button onClick={handleNavigate} style={{color: '#fff'}}>
+        Navegar
       </button>
     </Container>
   );
