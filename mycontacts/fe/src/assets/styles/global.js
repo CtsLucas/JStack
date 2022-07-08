@@ -9,6 +9,7 @@ export default createGlobalStyle`
   }
 
   body{
+    padding: 1rem;
     font-size: 16px;
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.gray[900]};
